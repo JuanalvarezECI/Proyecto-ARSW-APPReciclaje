@@ -5,41 +5,46 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+
 import java.util.Date;
 
 
 @Entity
-@Table
+@Table(name = "offers")
 public class OfferModel {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
-
-    @Column
+ 
+    @ManyToOne
+    @JoinColumn(name = "owner_id") 
     private UserModel Owner;
-
-    @Column
+    
+    @ManyToOne
+    @JoinColumn(name = "user_id") 
     private UserModel User;
-
-    @Column
+    @Column(nullable = false)
     private String Address;
-
-    @Column
+    @Column(nullable = false)
     private String Description;
-
-    @Column
+    @Column(nullable = false)
     private Integer Weight;
-
-    @Column
+    @Column(nullable = false)
     private Integer Points;
-
-    @Column
+    @Column(nullable = false)
     private Boolean Status;
-
-    @Column
+    @Column(nullable = false)
     private Date Date;
+    @Column(nullable = false)
+    private Integer Lat;
+    @Column(nullable = false)
+    private Integer Lon;
 
     public Long getId() {
         return id;
@@ -120,5 +125,43 @@ public class OfferModel {
     public void setDate(Date date) {
         Date = date;
     }
+
+    public OfferModel(Long id, UserModel owner, UserModel user, String address, String description, Integer weight,
+            Integer points, Boolean status, java.util.Date date, Integer lat, Integer lon) {
+        this.id = id;
+        Owner = owner;
+        User = user;
+        Address = address;
+        Description = description;
+        Weight = weight;
+        Points = points;
+        Status = status;
+        Date = date;
+        Lat = lat;
+        Lon = lon;
+    }
+
+    public Integer getLat() {
+        return Lat;
+    }
+
+    public void setLat(Integer lat) {
+        Lat = lat;
+    }
+
+    public Integer getLon() {
+        return Lon;
+    }
+
+    public void setLon(Integer lon) {
+        Lon = lon;
+    }
+
+    public OfferModel() {
+    }
+    
+
+   
+    
 
 }
