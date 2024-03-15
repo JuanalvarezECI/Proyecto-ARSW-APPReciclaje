@@ -7,4 +7,5 @@ integracion angular
 Creacion de primer servicio
 
 Hecho
-servicio offer
+servicio offers
+servicio users
