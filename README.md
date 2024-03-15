@@ -3,9 +3,14 @@
 - Sprint 1: https://www.canva.com/design/DAF--0vG2io/CRHwptQji-q-54v5XNLuiA/view?utm_content=DAF--0vG2io&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
 Pendiente 
+
+
 integracion angular
 Creacion de primer servicio
 
 Hecho
+
+
 servicio offers
 servicio users
+base de datos
