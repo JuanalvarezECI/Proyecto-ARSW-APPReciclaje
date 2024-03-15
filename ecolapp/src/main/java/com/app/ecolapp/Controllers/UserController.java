@@ -13,7 +13,7 @@ import com.app.ecolapp.Models.UserModel;
 import com.app.ecolapp.Services.UserService;
 
 @RestController
-@RequestMapping("/offer")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class UserController {
     public UserModel saveUser (@RequestBody UserModel user){
         return this.userService.saveUser(user);
     }
-    @GetMapping(path= "/{id}")
+    @GetMapping("/user/{id}")
     public Optional<UserModel> getUser(Long id){
         return this.userService.getById(id);
     }

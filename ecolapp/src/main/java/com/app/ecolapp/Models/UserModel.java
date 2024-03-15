@@ -1,33 +1,29 @@
 package com.app.ecolapp.Models;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.Table;
 
 
 @Entity
-@Table
+@Table(name = "users")
 public class UserModel {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column
+    ///@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    ///private ArrayList<OfferModel> offers;
     private String Firstname;
-
-    @Column
     private String SecondName;
-
-    @Column
     private String Email;
-
-    @Column
     private Integer Type;
-
-    @Column
     private Integer Points;
 
     public Long getId() {
