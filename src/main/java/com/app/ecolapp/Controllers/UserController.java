@@ -32,6 +32,8 @@ public class UserController {
     @GetMapping("/user/{id}")
     public GenericResponse<Optional<UserModel>> getUser(@PathVariable Long id){
         return this.userService.getById(id);
+    }
+
 
     @GetMapping(path= "/points/{id}")
     public GenericResponse<Integer> getUserPoints(@PathVariable Long id){
