@@ -4,18 +4,19 @@ package com.app.ecolapp.Controllers;
 import java.util.ArrayList;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.app.ecolapp.Models.UserModel;
 import com.app.ecolapp.Services.UserService;
+import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
     @Autowired
     private UserService userService;
 
@@ -24,12 +25,15 @@ public class UserController {
         return this.userService.getUsers();
     }
     @PostMapping()
-    public UserModel saveUser (@RequestBody UserModel user){
-        return this.userService.saveUser(user);
+    public RedirectView saveUser (@ModelAttribute UserModel user){
+        UserModel savedUser = this.userService.saveUser(user);
+        return new RedirectView("/user/" + savedUser.getId());
     }
     @GetMapping("/user/{id}")
-    public Optional<UserModel> getUser(Long id){
-        return this.userService.getById(id);
+    public String getUser(@PathVariable Long id, Model model){
+        Optional<UserModel> user = this.userService.getById(id);
+        model.addAttribute("user", user);
+        return "userProfile";
     }
     @GetMapping(path= "/points/{id}")
     public Integer getUserPoints(Long id){
