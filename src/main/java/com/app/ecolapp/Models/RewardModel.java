@@ -1,8 +1,5 @@
 package com.app.ecolapp.Models;
 
-
-
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -24,12 +21,14 @@ public class RewardModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id; 
-    @OneToMany
-    @JoinColumn(name = "benefited_user") 
-    private UserModel Owner;
+    //@OneToMany
+    //@JoinColumn(name = "benefited_user") 
+    //private UserModel Owner;
+
     @ManyToOne
-    @JoinColumn(name = "supplier") 
-    private String Supplier;
+    @JoinColumn(name = "supplier_id") 
+    private UserModel Supplier;
+
     @Column(nullable = false)
     private Date CreationDate;
     @Column(nullable = false)
@@ -49,16 +48,16 @@ public class RewardModel {
     public void setId(Long id) {
         this.id = id;
     }
-    public UserModel getOwner() {
-        return Owner;
-    }
-    public void setOwner(UserModel owner) {
-        Owner = owner;
-    }
-    public String getSupplier() {
+    //public UserModel getOwner() {
+    //    return Owner;
+    //}
+    //public void setOwner(UserModel owner) {
+    //    Owner = owner;
+    //}
+    public UserModel getSupplier() {
         return Supplier;
     }
-    public void setSupplier(String supplier) {
+    public void setSupplier(UserModel supplier) {
         Supplier = supplier;
     }
     public Date getCreationDate() {
@@ -94,11 +93,11 @@ public class RewardModel {
     
     public RewardModel() {
     }
-    public RewardModel(Long id, UserModel owner, String supplier, Date creationDate, String address, int cost,
+    public RewardModel(Long id, UserModel owner, UserModel supplier, Date creationDate, String address, int cost,
             String description, Date dueDate) {
         this.id = id;
-        Owner = owner;
-        Supplier = supplier;
+        //Owner = owner;
+       
         CreationDate = creationDate;
         this.address = address;
         Cost = cost;

@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -18,12 +19,19 @@ public class UserModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    ///@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    ///private ArrayList<OfferModel> offers;
+    //@OneToMany
+    //@JoinColumn(name = "offers") 
+    //private OfferModel offers;
+
+    @Column(nullable = false)
     private String Firstname;
+    @Column(nullable = false)
     private String SecondName;
+    @Column(nullable = false)
     private String Email;
+    @Column(nullable = false)
     private Integer Type;
+    @Column(nullable = false)
     private Integer Points;
 
     public Long getId() {
@@ -37,6 +45,13 @@ public class UserModel {
     public String getFirstname() {
         return Firstname;
     }
+    //public OfferModel getOffers() {
+    //    return offers;
+    //}
+
+    //public void setOffers(OfferModel offers) {
+    //    this.offers = offers;
+    //}
 
     public void setFirstname(String firstname) {
         Firstname = firstname;

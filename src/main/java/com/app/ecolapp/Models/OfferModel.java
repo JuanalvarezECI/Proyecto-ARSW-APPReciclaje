@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 import java.util.Date;
 
 
@@ -29,6 +28,7 @@ public class OfferModel {
     @ManyToOne
     @JoinColumn(name = "user_id") 
     private UserModel User;
+
     @Column(nullable = false)
     private String Address;
     @Column(nullable = false)
@@ -60,14 +60,6 @@ public class OfferModel {
 
     public void setOwner(UserModel owner) {
         Owner = owner;
-    }
-
-    public UserModel getUser() {
-        return User;
-    }
-
-    public void setUser(UserModel user) {
-        User = user;
     }
 
     public String getAddress() {
@@ -159,6 +151,16 @@ public class OfferModel {
 
     public OfferModel() {
     }
+
+    public UserModel getUser() {
+        return User;
+    }
+
+    public void setUser(UserModel user) {
+        User = user;
+    }
+
+    
     
 
    

@@ -19,7 +19,7 @@ public class WebSocketOffer implements WebSocketMessageBrokerConfigurer {
     @SuppressWarnings("null")
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/offers");
+        registry.enableSimpleBroker("/offer");
         registry.setApplicationDestinationPrefixes("/app");
         
     }
