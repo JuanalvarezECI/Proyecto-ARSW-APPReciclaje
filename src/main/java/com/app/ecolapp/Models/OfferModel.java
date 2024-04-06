@@ -24,11 +24,9 @@ public class OfferModel {
     @ManyToOne
     @JoinColumn(name = "owner_id") 
     private UserModel Owner;
-    
     @ManyToOne
     @JoinColumn(name = "user_id") 
     private UserModel User;
-
     @Column(nullable = false)
     private String Address;
     @Column(nullable = false)

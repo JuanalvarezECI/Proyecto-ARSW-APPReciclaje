@@ -1,7 +1,6 @@
 package com.app.ecolapp.Models;
-
 import java.util.Date;
-
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,14 +20,12 @@ public class RewardModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id; 
-    //@OneToMany
-    //@JoinColumn(name = "benefited_user") 
-    //private UserModel Owner;
-
+    @OneToMany
+    @JoinColumn(name = "benefited_user") 
+    private List<UserModel> Owner;
     @ManyToOne
     @JoinColumn(name = "supplier_id") 
     private UserModel Supplier;
-
     @Column(nullable = false)
     private Date CreationDate;
     @Column(nullable = false)
@@ -48,12 +45,6 @@ public class RewardModel {
     public void setId(Long id) {
         this.id = id;
     }
-    //public UserModel getOwner() {
-    //    return Owner;
-    //}
-    //public void setOwner(UserModel owner) {
-    //    Owner = owner;
-    //}
     public UserModel getSupplier() {
         return Supplier;
     }
@@ -110,9 +101,11 @@ public class RewardModel {
     public void setPin(String pin) {
         this.pin = pin;
     }
-   
-
-    
-
+    public List<UserModel> getOwner() {
+        return Owner;
+    }
+    public void setOwner(List<UserModel> owner) {
+        Owner = owner;
+    }
 
 }

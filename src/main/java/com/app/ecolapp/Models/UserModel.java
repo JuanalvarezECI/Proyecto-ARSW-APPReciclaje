@@ -1,12 +1,14 @@
 package com.app.ecolapp.Models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -19,9 +21,9 @@ public class UserModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    //@OneToMany
-    //@JoinColumn(name = "offers") 
-    //private OfferModel offers;
+    @OneToMany
+    @JoinColumn(name = "offers") 
+    private List<OfferModel> offers;
 
     @Column(nullable = false)
     private String Firstname;
@@ -99,6 +101,14 @@ public class UserModel {
     }
 
     public UserModel() {
+    }
+
+    public List<OfferModel> getOffers() {
+        return offers;
+    }
+
+    public void setOffers(List<OfferModel> offers) {
+        this.offers = offers;
     }
     
     
