@@ -26,6 +26,8 @@ public class OfferController {
     @GetMapping()
     public GenericResponse<ArrayList<OfferModel>> getOffers(){
         return this.offerService.getOffers();
+
+        
     }
 
     @PostMapping()

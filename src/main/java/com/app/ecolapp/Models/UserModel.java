@@ -73,5 +73,18 @@ public class UserModel {
     public void setPoints(Integer points) {
         this.Points = points;
     }
+
+    public UserModel(Long id, String firstname, String secondName, String email, Integer type, Integer points) {
+        this.id = id;
+        Firstname = firstname;
+        SecondName = secondName;
+        Email = email;
+        Type = type;
+        Points = points;
+    }
+
+    public UserModel() {
+    }
+    
     
 }
