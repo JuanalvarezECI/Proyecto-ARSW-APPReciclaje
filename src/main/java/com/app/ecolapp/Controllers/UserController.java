@@ -4,7 +4,6 @@ package com.app.ecolapp.Controllers;
 import java.util.ArrayList;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.ecolapp.Models.UserModel;
 import com.app.ecolapp.Models.Response.GenericResponse;
 import com.app.ecolapp.Services.UserService;
-import org.springframework.web.servlet.view.RedirectView;
+
 
 @RestController
 @RequestMapping("/user")
