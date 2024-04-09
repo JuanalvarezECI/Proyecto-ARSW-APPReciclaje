@@ -30,7 +30,7 @@ public class UserController {
     public GenericResponse<UserModel> saveUser (@RequestBody UserModel user){
         return this.userService.saveUser(user);
     }
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public GenericResponse<Optional<UserModel>> getUser(@PathVariable Long id){
         return this.userService.getById(id);
     }

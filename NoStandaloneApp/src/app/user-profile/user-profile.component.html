@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Perfil de Usuario</h1>
+  
+    <div *ngIf="user" class="profile">
+      <p><strong>ID:</strong> {{user.id}}</p>
+      <p><strong>Nombre:</strong> {{user.firstname}}</p>
+      <p><strong>Apellido:</strong> {{user.secondName}}</p>
+      <p><strong>Email:</strong> {{user.email}}</p>
+      <p><strong>Tipo:</strong> {{user.type}}</p>
+      <p><strong>Puntos:</strong> {{user.points}}</p>
+    </div>
+  </div>

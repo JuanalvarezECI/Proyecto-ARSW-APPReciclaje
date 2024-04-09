@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+import { UserModel } from './user.model';
+
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
+  
 })
+
+
 export class UserComponent implements OnInit {
 
   user: any = {
@@ -17,7 +23,8 @@ export class UserComponent implements OnInit {
     email: ''
   };
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
+
 
   ngOnInit() {
     this.userService.getUsers().subscribe(data => {
@@ -26,9 +33,10 @@ export class UserComponent implements OnInit {
   }
   onSubmit() {
     this.userService.createUser(this.user).subscribe(
-      response => {
+      (response: UserModel) => {
         console.log(response);
-        // Aquí puedes manejar la respuesta del servidor si es necesario
+        this.router.navigate(['/user', response.id]);
+
       },
       error => {
         console.error('Error:', error);

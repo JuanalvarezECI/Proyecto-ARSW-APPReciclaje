@@ -6,13 +6,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
     // tus componentes aquí
     AppComponent,
-    UserComponent
+    UserComponent,
+    UserProfileComponent,
+    UserListComponent,
   ],
   imports: [
     // otros módulos aquí
