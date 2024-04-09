@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.ecolapp.Models.UserModel;
 import com.app.ecolapp.Models.Response.GenericResponse;
 import com.app.ecolapp.Services.UserService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -28,7 +30,7 @@ public class UserController {
     public GenericResponse<UserModel> saveUser (@RequestBody UserModel user){
         return this.userService.saveUser(user);
     }
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public GenericResponse<Optional<UserModel>> getUser(@PathVariable Long id){
         return this.userService.getById(id);
     }

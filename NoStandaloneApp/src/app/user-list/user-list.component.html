@@ -1,0 +1,22 @@
+<div class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Email</th>
+        <th>Tipo de usuario</th>
+        <th>Puntos</th>
+        <!-- Agrega más columnas según sea necesario -->
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.secondName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.type }}</td>
+        <td>{{ user.points }}</td>
+        <!-- Agrega más celdas según sea necesario -->
+      </tr>
+    </table>
+  </div>
