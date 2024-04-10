@@ -20,7 +20,8 @@ export class UserComponent implements OnInit {
     points: null,
     firstname: '',
     secondName: '',
-    email: ''
+    email: '',
+    password: ''
   };
 
   constructor(private userService: UserService, private router: Router) { }

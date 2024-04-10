@@ -40,5 +40,9 @@ public class UserController {
     public GenericResponse<Integer> getUserPoints(@PathVariable Long id){
         return this.userService.getPoints(id);
     }
-
+    @PostMapping("/login")
+    public GenericResponse<UserModel> login(@RequestBody UserModel loginUser){
+        System.out.println("Email: " + loginUser.getEmail() + ", Password: " + loginUser.getPassword()); // Agrega esta línea
+        return this.userService.login(loginUser.getEmail(), loginUser.getPassword());
+    }
 }

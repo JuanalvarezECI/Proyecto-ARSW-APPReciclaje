@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UserListComponent } from './user-list/user-list.component';
     UserComponent,
     UserProfileComponent,
     UserListComponent,
+    LoginComponent,
   ],
   imports: [
     // otros módulos aquí

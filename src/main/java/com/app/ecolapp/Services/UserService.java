@@ -61,5 +61,18 @@ public class UserService {
         }
     }
 
+    public GenericResponse<UserModel> login(String email, String password){
+        try {
+            UserModel user = userRepository.findByEmail(email);
+            System.out.println("Found user: " + user + ", Comparing password: " + password); // Agrega esta línea
+            if (user != null && user.getPassword().equals(password)) {
+                return new GenericResponse<UserModel>(HttpStatus.OK, "OK", true, user);
+            } else {
+                return new GenericResponse<UserModel>(HttpStatus.UNAUTHORIZED, "Invalid credentials", false, null);
+            }
+        } catch (Exception exception) {
+            return new GenericResponse<UserModel>(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(), false, null);
+        }
+    }
 
 }

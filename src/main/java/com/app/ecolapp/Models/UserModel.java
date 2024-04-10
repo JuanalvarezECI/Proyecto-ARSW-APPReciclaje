@@ -26,15 +26,25 @@ public class UserModel {
     private List<OfferModel> offers;
 
     @Column(nullable = false)
-    private String Firstname;
+    private String firstname;
     @Column(nullable = false)
-    private String SecondName;
+    private String secondName;
     @Column(nullable = false)
-    private String Email;
+    private String email;
     @Column(nullable = false)
-    private Integer Type;
+    private Integer type;
     @Column(nullable = false)
-    private Integer Points;
+    private Integer points;
+    @Column(nullable = false)
+    private String password;
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public Long getId() {
         return id;
@@ -45,59 +55,53 @@ public class UserModel {
     }
 
     public String getFirstname() {
-        return Firstname;
+        return firstname;
     }
-    //public OfferModel getOffers() {
-    //    return offers;
-    //}
-
-    //public void setOffers(OfferModel offers) {
-    //    this.offers = offers;
-    //}
 
     public void setFirstname(String firstname) {
-        Firstname = firstname;
+        this.firstname = firstname;
     }
 
     public String getSecondName() {
-        return SecondName;
+        return secondName;
     }
 
     public void setSecondName(String secondName) {
-        SecondName = secondName;
+        this.secondName = secondName;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public Integer getType() {
-        return Type;
+        return type;
     }
 
     public void setType(Integer type) {
-        this.Type = type;
+        this.type = type;
     }
 
     public Integer getPoints() {
-        return Points;
+        return points;
     }
 
     public void setPoints(Integer points) {
-        this.Points = points;
+        this.points = points;
     }
 
-    public UserModel(Long id, String firstname, String secondName, String email, Integer type, Integer points) {
+    public UserModel(Long id, String firstname, String secondName, String email, Integer type, Integer points, String password) {
         this.id = id;
-        Firstname = firstname;
-        SecondName = secondName;
-        Email = email;
-        Type = type;
-        Points = points;
+        this.firstname = firstname;
+        this.secondName = secondName;
+        this.email = email;
+        this.type = type;
+        this.points = points;
+        this.password = password;
     }
 
     public UserModel() {
@@ -110,6 +114,4 @@ public class UserModel {
     public void setOffers(List<OfferModel> offers) {
         this.offers = offers;
     }
-    
-    
 }

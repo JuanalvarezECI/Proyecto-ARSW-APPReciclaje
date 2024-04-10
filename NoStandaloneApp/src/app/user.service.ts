@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserModel } from './user/user.model'; // Asegúrate de que la ruta es correcta
+import { LoginResponse } from './login/login.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +28,11 @@ export class UserService {
 
   getUserPoints(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/user/points/${id}`);
+  }
+
+  login(user: UserModel): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.baseUrl}/user/login`, JSON.stringify(user), {
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }

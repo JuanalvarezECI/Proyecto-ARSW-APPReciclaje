@@ -7,6 +7,5 @@ import com.app.ecolapp.Models.UserModel;
 
 @Repository
 public interface IUserRepository extends JpaRepository<UserModel, Long> {
-
-
+    UserModel findByEmail(String email);
 }

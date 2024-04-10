@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   { path: 'createuser', component: UserComponent},
   { path: 'user/:id', component: UserProfileComponent}, // usa el nuevo componente aquí
   { path: 'users', component: UserListComponent}, // nueva ruta aquí
-
+  { path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
