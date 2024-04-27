@@ -6,5 +6,5 @@ export class UserModel {
     type!: number;
     points!: number;
     password!: string;
-    offers!: any[]; // Puedes reemplazar 'any' con el tipo de tus ofertas si tienes un modelo para ellas
+    offers!: any[]; 
   }

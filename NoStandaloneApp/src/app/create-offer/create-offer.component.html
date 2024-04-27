@@ -1,0 +1,80 @@
+
+<div class = "col-md-6 offset-md-3">
+    <h3 class="text-center"> Registro de oferta </h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label> Digite la Dirección: </label>
+            <input type = "text"
+            class="form-control"
+            id = "direccion"
+            [(ngModel)]="Oferta.address"
+            name = "address"
+            >
+        </div> 
+        <div class="form-group">
+            <label> Digite cuantos puntos tiene: </label>
+            <input type = "text"
+            class="form-control"
+            id = "puntos"
+            [(ngModel)]="Oferta.points"
+            name = "puntos"
+            >
+        </div> 
+        <div class="form-group">
+            <label> Digite que tipo de reciclaje tiene: </label>
+            <input type = "text"
+            class="form-control"
+            id = "description"
+            [(ngModel)]="Oferta.description"
+            name = "description"
+            >
+        </div> 
+        <div class="form-group">
+            <label> Digite el reciclaje en kilos: </label>
+            <input type = "text"
+            class="form-control"
+            id = "weight"
+            [(ngModel)]="Oferta.weight"
+            name = "weight"
+            >
+        </div>
+        <div class="form-group">
+            <label> Digite el status: </label>
+            <input type = "text"
+            class="form-control"
+            id = "status"
+            [(ngModel)]="Oferta.status"
+            name = "status"
+           >
+        </div>
+        <div class="form-group">
+            <label> Digite la fecha </label>
+            <input type = "text"
+            class="form-control"
+            id = "fecha"
+            [(ngModel)]="Oferta.date"
+            name = "date"
+            >
+        </div>
+        <div class="form-group">
+            <label> Digite la longitud: </label>
+            <input type = "text"
+            class="form-control"
+            id = "longitud"
+            [(ngModel)]="Oferta.lon"
+            name = "longitud"
+            >
+        </div>
+        <div class="form-group">
+            <label> Digite la latitud: </label>
+            <input type = "text"
+            class="form-control"
+            id = "latitud"
+            [(ngModel)]="Oferta.lat"
+            name = "latitud"
+            >
+        </div>
+        <button class="btn btn-success"> guardar </button> 
+    </form>    
+</div>  
+

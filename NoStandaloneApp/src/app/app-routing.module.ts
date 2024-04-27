@@ -6,26 +6,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { LoginComponent } from './login/login.component';
+import { ReciclajeComponent } from './reciclaje/reciclaje.component';
+import { CreateOfferComponent } from './create-offer/create-offer.component';
+
+
 
 
 const routes: Routes = [
   { path: 'createuser', component: UserComponent},
-  { path: 'user/:id', component: UserProfileComponent}, // usa el nuevo componente aquí
-  { path: 'users', component: UserListComponent}, // nueva ruta aquí
+  { path: 'user/:id', component: UserProfileComponent}, 
+  { path: 'users', component: UserListComponent}, 
   { path: 'login', component: LoginComponent},
+  { path: 'reciclaje', component: ReciclajeComponent },
+  { path: 'create-offer', component: CreateOfferComponent }
 ];
 
 @NgModule({
   declarations: [
-    // tus componentes aquí
   ],
   imports: [
-    // otros módulos aquí
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot(routes) // Añade esto
+    RouterModule.forRoot(routes)
+   
   ],
-  
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

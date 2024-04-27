@@ -25,9 +25,11 @@ export class LoginComponent {
       response => {
         console.log('Response:', response); // Imprime la respuesta completa // Imprime la respuesta en la consola
         if (response.state) {
+          console.log('Login successful, redirecting to reciclaje page...');
           // Si el inicio de sesión fue exitoso, redirige al usuario a su perfil.
-          this.router.navigate(['/user', response.data.id]);
+          this.router.navigate(['/reciclaje']);
         } else {
+        console.log('Login failed:', response.message);
           // Si el inicio de sesión no fue exitoso, muestra un mensaje de error.
           this.errorMessage = response.message;
         }

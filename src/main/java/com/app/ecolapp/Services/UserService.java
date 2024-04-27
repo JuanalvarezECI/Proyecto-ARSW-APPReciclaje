@@ -61,6 +61,7 @@ public class UserService {
         }
     }
 
+
     public GenericResponse<UserModel> login(String email, String password){
         try {
             UserModel user = userRepository.findByEmail(email);
@@ -74,5 +75,6 @@ public class UserService {
             return new GenericResponse<UserModel>(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(), false, null);
         }
     }
+
 
 }
