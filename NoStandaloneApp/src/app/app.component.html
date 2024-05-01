@@ -4,38 +4,11 @@
         <h2>Menu de Navegación de la App</h2>
         <ul>
         <li><a routerLink="/createuser">Crear un Usuario</a></li>
-          <li><a routerLink="/create-offer">Crear oferta</a></li>
+        <li><a routerLink="/create-offer">Crear oferta</a></li>
         <li><a routerLink="/users">Todos los usuarios</a></li>
         <li><a routerLink="/user/1">Buscar un usuario especifico : ejemplo usuario id : 1</a></li>
         <li><a routerLink="/login">Iniciar sesión</a></li>
         </ul>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   </div>
 </div>
-<app-create-offer></app-create-offer>
-<app-list-offer> </app-list-offer>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 mx-auto"> <!-- col-md-6 para ocupar la mitad del ancho, mx-auto para centrarlo -->
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Oferta</h5>
-          <p class="card-text">Dirección: </p>
-          <p class="card-text">Puntos: </p>
-          <p class="card-text">ID: </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
+<router-outlet></router-outlet>

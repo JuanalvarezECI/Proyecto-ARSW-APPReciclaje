@@ -9,7 +9,7 @@ import { OfferModel } from './reciclaje/reciclaje.model';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:37000/offers';
+  private baseUrl = 'http://localhost:37000';
 
   constructor(private http: HttpClient) { }
 

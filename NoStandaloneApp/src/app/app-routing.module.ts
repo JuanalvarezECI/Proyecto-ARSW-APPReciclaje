@@ -8,6 +8,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { LoginComponent } from './login/login.component';
 import { ReciclajeComponent } from './reciclaje/reciclaje.component';
 import { CreateOfferComponent } from './create-offer/create-offer.component';
+import { ListOfferComponent } from './list-offer/list-offer.component';
 
 
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent}, 
   { path: 'login', component: LoginComponent},
   { path: 'reciclaje', component: ReciclajeComponent },
-  { path: 'create-offer', component: CreateOfferComponent }
+  { path: 'create-offer', component: CreateOfferComponent },
+  { path: 'list-offer',component:ListOfferComponent}
 ];
 
 @NgModule({
