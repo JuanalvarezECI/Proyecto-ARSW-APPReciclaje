@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { ReciclajeComponent } from './reciclaje/reciclaje.component';
 import { CreateOfferComponent } from './create-offer/create-offer.component';
 import { ListOfferComponent } from './list-offer/list-offer.component';
+import { RewardsComponent } from './rewards/rewards.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'reciclaje', component: ReciclajeComponent },
   { path: 'create-offer', component: CreateOfferComponent },
-  { path: 'list-offer',component:ListOfferComponent}
+  { path: 'list-offer',component:ListOfferComponent},
+  { path: 'rewards', component: RewardsComponent }
 ];
 
 @NgModule({

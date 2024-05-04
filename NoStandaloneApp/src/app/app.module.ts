@@ -12,6 +12,7 @@ import { ReciclajeComponent } from './reciclaje/reciclaje.component';
 import { RouterModule } from '@angular/router';
 import { CreateOfferComponent } from './create-offer/create-offer.component';
 import { ListOfferComponent } from './list-offer/list-offer.component';
+import { RewardsComponent } from './rewards/rewards.component';
 
 
 
@@ -24,7 +25,8 @@ import { ListOfferComponent } from './list-offer/list-offer.component';
     LoginComponent,
     ReciclajeComponent,
     CreateOfferComponent,
-    ListOfferComponent
+    ListOfferComponent,
+    RewardsComponent
   ],
   imports: [
 

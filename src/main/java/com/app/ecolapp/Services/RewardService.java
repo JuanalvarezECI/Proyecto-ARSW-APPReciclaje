@@ -1,6 +1,8 @@
 package com.app.ecolapp.Services;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -36,5 +38,18 @@ public class RewardService {
                     false, null);
         }
     }
-
+    public GenericResponse<ArrayList<RewardModel>> getRewardsWithMinQuantity() {
+        try {
+            var list = (ArrayList<RewardModel>) rewardRepository.findAll();
+            var filteredList = list.stream()
+                .filter(reward -> reward.getCost() >= 1)
+                .collect(Collectors.toCollection(ArrayList::new));
+    
+            return new GenericResponse<ArrayList<RewardModel>>(HttpStatus.OK, "OK", true, filteredList);
+    
+        } catch (Exception exception) {
+            return new GenericResponse<ArrayList<RewardModel>>(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(),
+                    false, null);
+        }
+    }
 }

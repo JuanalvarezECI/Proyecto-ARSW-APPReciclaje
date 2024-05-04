@@ -1,14 +1,10 @@
 package com.app.ecolapp.Models;
 import java.util.Date;
-import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -19,15 +15,11 @@ public class RewardModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id; 
-    @OneToMany
-    @JoinColumn(name = "benefited_user") 
-    private List<UserModel> Owner;
-    @ManyToOne
-    @JoinColumn(name = "supplier_id") 
-    private UserModel Supplier;
+    private Long id;
     @Column(nullable = false)
     private Date CreationDate;
+    @Column(nullable = false)
+    private int unit;
     @Column(nullable = false)
     private String address;
     @Column(nullable = false)
@@ -39,17 +31,17 @@ public class RewardModel {
     @Column(nullable = false)
     private String pin;
 
+    public int getUnit() {
+        return unit;
+    }
+    public void setUnit(int unit) {
+        this.unit = unit;
+    }
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
-    }
-    public UserModel getSupplier() {
-        return Supplier;
-    }
-    public void setSupplier(UserModel supplier) {
-        Supplier = supplier;
     }
     public Date getCreationDate() {
         return CreationDate;
@@ -100,12 +92,6 @@ public class RewardModel {
     }
     public void setPin(String pin) {
         this.pin = pin;
-    }
-    public List<UserModel> getOwner() {
-        return Owner;
-    }
-    public void setOwner(List<UserModel> owner) {
-        Owner = owner;
     }
 
 }

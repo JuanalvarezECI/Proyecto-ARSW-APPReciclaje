@@ -53,5 +53,10 @@ export class UserService {
       headers: { 'Content-Type': 'application/json' },
     });
   }
+
+  getRewardsWithMinQuantity(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/reward`);
+  }
+
 }
 
