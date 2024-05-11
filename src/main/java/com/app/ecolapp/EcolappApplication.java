@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Date;
-import java.util.Collections;
-import com.app.ecolapp.Models.RewardModel;
-import com.app.ecolapp.Repositories.IRewardRepository;
+
+import com.app.ecolapp.models.RewardModel;
+import com.app.ecolapp.repositories.IRewardRepository;
 
 @SpringBootApplication
 public class EcolappApplication {
