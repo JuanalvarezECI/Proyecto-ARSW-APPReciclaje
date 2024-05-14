@@ -1,15 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³ÇŒéþÿÿÿÿ
-d	java:S116"PRename this field "Owner" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë×¹<
-i	java:S116"ORename this field "User" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô†Ðúÿÿÿÿÿ
-g	java:S116"RRename this field "Address" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ü©
-p	java:S116 "VRename this field "Description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¼Â­ùÿÿÿÿ
-f	java:S116""QRename this field "Weight" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜¡¬®
-k	java:S116$"QRename this field "Points" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ¸·ûÿÿÿÿ
-f	java:S116&"QRename this field "Status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü…Ø¶
-i	java:S116("ORename this field "Date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÂÿÿÿÿÿ
-c	java:S116*"NRename this field "Lat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²”¼Î
-h	java:S116,"NRename this field "Lon" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ûçËûÿÿÿÿ
-w
-java:S4144f"\Update this method so that its implementation is not identical to "getAvailable" on line 94.(ƒ„ÂÞÿÿÿÿÿ
-\	java:S107v"BConstructor has 11 parameters, which is greater than 7 authorized.(‰µ–ùÿÿÿÿ
