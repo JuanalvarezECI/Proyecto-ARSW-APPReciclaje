@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center my-4">Ver ofertas generales</h1>
+
+  <div *ngIf="ofertas.length > 0" class="row">
+    <div *ngFor="let oferta of ofertas; let i = index" class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">ID: {{ oferta.data[0] }}</h5>
+          <p class="card-text">Nombre: {{ oferta.data[1] }}</p>
+          <p class="card-text">Dirección: {{ oferta.data[2] }}</p>
+          <p class="card-text">Estado: {{ oferta.data[3] }}</p>
+          <button class="btn btn-primary" (click)="consultarOferta(oferta.data[0])">Tomar Oferta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<body>
+<div class="container">
+    <h2 class="text-center mt-4">¿Qué quieres hacer hoy?</h2>
+    <div class="row justify-content-center mt-5 d-flex">
+        <div class="col-md-4" *ngIf="rol == 'usuario'">
+            <div class="card d-flex flex-column h-100">
+                <img class="card-img-top my-image" src="assets\imagenes\publicarOferta.webp" alt="Card  cap">
+                <div class="card-body">
+                    <h5 class="card-title">Publicar una Oferta</h5>
+                    <p class="card-text">Crea una nueva oferta para que los recicladores la vean.</p>
+                    <button class="btn btn-primary btn-block mt-auto" (click)="redirect('crear')">Ir a Crear Oferta</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card d-flex flex-column h-100">
+                <img class="card-img-top my-image" src="assets\imagenes\misOfertas.jpg" alt="Card cap">
+                <div class="card-body">
+                    <h5 class="card-title">Ver mis Ofertas</h5>
+                    <p class="card-text">Revisa y administra tus ofertas publicadas.</p>
+                    <button class="btn btn-secondary btn-block mt-auto" (click)="redirect('my-offers')">Ir a Mis Ofertas</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" *ngIf="rol == 'reciclador'">
+            <div class="card d-flex flex-column h-100">
+                <img class="card-img-top my-image" src="assets\imagenes\verOfertas.jpg" alt="Card cap">
+                <div class="card-body">
+                    <h5 class="card-title">Ver ofertas disponibles</h5>
+                    <p class="card-text">Explora las ofertas disponibles y encuentra la que más te convenga.</p>
+                    <button class="btn btn-success btn-block mt-auto" (click)="redirect('ofertas')">Ir a Ver Ofertas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
