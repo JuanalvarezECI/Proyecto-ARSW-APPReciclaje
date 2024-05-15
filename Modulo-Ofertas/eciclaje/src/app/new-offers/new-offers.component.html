@@ -1,18 +1,23 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Formulario de Creación de Oferta</title>
+    <title>Formulario de Recolección</title>
 </head>
 <body>
+    <button class="btn btn-danger position-fixed top-0 end-0 m-0 p-0 d-flex flex-column align-items-center" routerLink="/">
+        <img src="assets\imagenes\cerrarSesion.png" alt="Cerrar sesión"  width="40" height="40">
+        <span>Cerrar sesión</span>
+    </button>
     <div class="container py-5">
-        <h2 class="text-center mb-4">Crear una nueva oferta</h2>
+        <h2 class="text-center mb-4">Formulario de Recolección</h2>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow-lg">
                     <div class="card-body">
                         <form action="/submit" method="post">
                             <div class="form-group">
-                                <label for="nombre">Nombre de la Oferta:</label>
+                                <label for="nombre">Nombre:</label>
                                 <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control">
                             </div>
                             <div class="form-group">
@@ -20,7 +25,8 @@
                                 <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" class="form-control">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" (click)="insertPetition()" class="btn btn-primary mt-3" routerLink="/inicio">Crear Oferta</button>                            </div>
+                                <button type="submit" (click)="insertPetition()" class="btn btn-primary mt-3">Enviar</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -29,5 +35,3 @@
     </div>
 </body>
 </html>
-
-

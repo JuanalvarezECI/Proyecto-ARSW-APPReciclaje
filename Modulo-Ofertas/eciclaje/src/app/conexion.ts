@@ -30,10 +30,15 @@ export class SocketService {
       }
       console.log(misOfertas, "ofertas al actualizar reciclador")
       if (this.rol == "reciclador"){
+        console.log("rolllalalalla:", this.rol)
         this.myoffersUpdated.next(misOfertas);
       }
       
     });
+
+
+
+
 
 
     this.socket.on('myupdate-offers_usser', offers => {
@@ -46,6 +51,7 @@ export class SocketService {
       }
       console.log(misOfertas, "ofertas al actualizar usuario")
       if (this.rol == "usuario"){
+        console.log("rolllalalalla usuario:", this.rol)
         this.myoffersUpdated.next(misOfertas);
       }
     });
@@ -58,6 +64,7 @@ export class SocketService {
   setname(nombre:any){
     this.socket.emit('setName', nombre);
     this.name = nombre
+    console.log("Nombre que se está seteando:", nombre)
   }
   setRol(userRol:any){
     this.rol = userRol
@@ -66,14 +73,16 @@ export class SocketService {
     return this.rol
   }
 
+  setStatusEnd(id:any){
+    this.socket.emit("endState", [this.name, id])
+  }
+
   getMyOffersUpdateListener() {
     return this.myoffersUpdated.asObservable();
   }
 
   
 
-
-  // Example methods you can add to your service
   sendMessage(message: string): void {
     this.socket.emit('message', message);
   }
@@ -88,9 +97,9 @@ export class SocketService {
     });
   }
   
-  public sendOffer(offer: any) {
-    this.socket.emit('new-offer', offer);
-  }
+  // public sendOffer(offer: any) {
+  //   this.socket.emit('new-offer', offer);
+  // }
   
   public getOffers(){
     this.socket.on('update-offers', offers => {
@@ -102,12 +111,12 @@ export class SocketService {
   }
 
   newRequest( nombre : any, direccion : any, estado:any){
-    
-    this.socket.emit('new-offer', {data: [nombre,direccion,estado]})
+   
+    this.socket.emit('new-offer', [this.name, {data: [nombre,direccion,estado]}])
   }
 
   takeOffer(id:any){
-    this.socket.emit("take-offer",id)
+    this.socket.emit("take-offer",[this.name, id])
   }
 
 //   tomarOfertaPorId(id: number) {

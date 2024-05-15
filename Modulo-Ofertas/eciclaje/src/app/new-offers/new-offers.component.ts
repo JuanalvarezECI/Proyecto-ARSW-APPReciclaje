@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SocketService } from '../conexion';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-new-offers',
   templateUrl: './new-offers.component.html',
@@ -10,12 +12,14 @@ export class NewOffersComponent {
   nombre : any = ''
   direccion : any = ''
 
-  constructor(private socket : SocketService) {
+  constructor(private socket : SocketService, private router: Router) {
     
   }
   insertPetition(){
     this.socket.newRequest(this.nombre, this.direccion, "En curso")
-    console.log("Entra")
+    alert("oferta enviada")
+    this.router.navigate(['/inicio']);
+
   }
 
 }
