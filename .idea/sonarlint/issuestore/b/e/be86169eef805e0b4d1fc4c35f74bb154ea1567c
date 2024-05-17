@@ -1,10 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³ÇŒéþÿÿÿÿ
-q	java:S116"WRename this field "CreationDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤¥“üÿÿÿÿ
-d	java:S116"ORename this field "Cost" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚ŽÔå
-p	java:S116"VRename this field "Description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¼Â­ùÿÿÿÿ
-g	java:S116"RRename this field "DueDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ¸„é
-U	java:S107O"AConstructor has 8 parameters, which is greater than 7 authorized.(î„®*
-O
-java:S1172O":Remove these unused method parameters "owner", "supplier".(î„®*
-V	java:S125R"<This block of commented-out lines of code should be removed.(¶õÉ¢ùÿÿÿÿ

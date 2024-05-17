@@ -1,12 +1,0 @@
-
-Š	java:S116"PRename this field "Owner" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë×¹<J$76294aa6-8c7e-49e4-99a4-a43c2d238416
-	java:S116"ORename this field "User" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô†ÐúÿÿÿÿÿJ$3e87f9dc-9ee3-49bb-982c-a4bc862f334d
-	java:S116"RRename this field "Address" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ü©J$3d52a3ab-47ae-458d-9185-2e5a9e616272
-–	java:S116 "VRename this field "Description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¼Â­ùÿÿÿÿJ$821a0711-2261-474a-9f42-68ca42808921
-Œ	java:S116""QRename this field "Weight" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜¡¬®J$9249f00f-743b-4b70-81a1-cd3938cf6f03
-‘	java:S116$"QRename this field "Points" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ¸·ûÿÿÿÿJ$ee0bc4d2-c1f4-4881-8a7f-ba21627976f0
-Œ	java:S116&"QRename this field "Status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü…Ø¶J$721aa2d3-df67-409c-a663-d466e5dae088
-	java:S116("ORename this field "Date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÂÿÿÿÿÿJ$83fc2d6b-da1f-4e8f-abcd-b0c1a0ba05e1
-‰	java:S116*"NRename this field "Lat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²”¼ÎJ$172bc82d-8bd6-49bb-99d2-417ed264ee72
-Ž	java:S116,"NRename this field "Lon" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ûçËûÿÿÿÿJ$fa78bae4-4bb8-4f49-b237-2659916d2c31
-‚	java:S107t"BConstructor has 11 parameters, which is greater than 7 authorized.(‰µ–ùÿÿÿÿJ$f6ad5d72-6c7e-4ed0-84c8-03108aafae86
