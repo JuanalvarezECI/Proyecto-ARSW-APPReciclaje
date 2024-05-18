@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { SocketService } from './conexion';
 import { Socket } from 'socket.io-client';
-import { of } from 'rxjs';
 
 describe('SocketService', () => {
   let service: SocketService;

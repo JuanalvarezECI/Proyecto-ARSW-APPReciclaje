@@ -192,6 +192,8 @@ io.on("connection", (socket) => {
             }
         } 
         else {
+          // TODO document why this block is empty
+
         }
     });
 

@@ -12,9 +12,6 @@ interface Offer {
   id: string;
   data: any[];
 }
-interface usuarioInterface {
-  puntos: number
-}
 
 interface StatusResponse {
   material: string;
