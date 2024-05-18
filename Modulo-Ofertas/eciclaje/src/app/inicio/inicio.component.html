@@ -1,18 +1,38 @@
 <body>
     <div class="container">
-        <button class="btn btn-danger position-fixed top-0 end-0 m-0 p-0 d-flex flex-column align-items-center" routerLink="/">
-            <img src="assets\imagenes\cerrarSesion.png" alt="Cerrar sesión"  width="40" height="40">
+        <button class="btn btn-danger position-fixed top-0 end-0 m-0 p-0 d-flex flex-column align-items-center"
+            routerLink="/">
+            <img src="assets\imagenes\cerrarSesion.png" alt="Cerrar sesión" width="40" height="40">
             <span>Cerrar sesión</span>
         </button>
+
+        <h4>Nombre usuario: {{nombreUsuario}}</h4>
+        <h4>Rol: {{rol}}</h4>
+        <h4 *ngIf="rol === 'usuario'">Puntos: {{puntaje}}</h4>
+
+
         <h2 class="text-center mt-4">¿Qué quieres hacer hoy?</h2>
         <div class="row justify-content-center mt-5 d-flex">
-            <div class="col-md-4" *ngIf="rol == 'usuario'">
+            <div class="col-md-4 mb-4" *ngIf="rol == 'usuario'">
                 <div class="card shadow-lg d-flex flex-column h-100">
-                    <img class="card-img-top my-image" src="assets\imagenes\publicarOferta.webp" alt="Card  cap">
+                    <img class="card-img-top my-image" src="assets\imagenes\informacion.jpg" alt="Card  cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Información de los Puntos</h5>
+                        <p class="card-text">Aquí obtendrás información de cuantos puntos recibirás por reciclar cada
+                            material.</p>
+                        <button class="btn btn-primary btn-block mt-auto"
+                            (click)="redirect('informacion')">Información</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" *ngIf="rol == 'usuario'">
+                <div class="card shadow-lg d-flex flex-column h-100">
+                    <img class="card-img-top my-image" src="assets\imagenes\publicarOferta.webp" alt="Card cap">
                     <div class="card-body">
                         <h5 class="card-title">Publicar una Oferta</h5>
                         <p class="card-text">Crea una nueva oferta para que los recicladores la vean.</p>
-                        <button class="btn btn-primary btn-block mt-auto" (click)="redirect('crear')">Ir a Crear Oferta</button>
+                        <button class="btn btn-primary btn-block mt-auto" (click)="redirect('crear')">Ir a Crear
+                            Oferta</button>
                     </div>
                 </div>
             </div>
@@ -22,7 +42,19 @@
                     <div class="card-body">
                         <h5 class="card-title">Ver mis Ofertas</h5>
                         <p class="card-text">Revisa y administra tus ofertas publicadas.</p>
-                        <button class="btn btn-secondary btn-block mt-auto" (click)="redirect('my-offers')">Ir a Mis Ofertas</button>
+                        <button class="btn btn-secondary btn-block mt-auto" (click)="redirect('my-offers')">Ir a Mis
+                            Ofertas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" *ngIf="rol == 'usuario'">
+                <div class="card shadow-lg d-flex flex-column h-100">
+                    <img class="card-img-top my-image" src="assets\imagenes\Premios.jpg" alt="Card  cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Consulta y Reclama premios</h5>
+                        <p class="card-text">Aquí podrás conocer que premios puedes reclamar con tus puntos actuales</p>
+                        <button class="btn btn-primary btn-block mt-auto"
+                            (click)="redirect('premios')">Ir a Premios</button>
                     </div>
                 </div>
             </div>
@@ -32,11 +64,11 @@
                     <div class="card-body">
                         <h5 class="card-title">Ver ofertas disponibles</h5>
                         <p class="card-text">Explora las ofertas disponibles y encuentra la que más te convenga.</p>
-                        <button class="btn btn-success btn-block mt-auto" (click)="redirect('ofertas')">Ir a Ver Ofertas</button>
+                        <button class="btn btn-success btn-block mt-auto" (click)="redirect('ofertas')">Ir a Ver
+                            Ofertas</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </body>
-    
+</body>

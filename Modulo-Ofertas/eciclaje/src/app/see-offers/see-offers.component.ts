@@ -27,6 +27,13 @@ export class SeeOffersComponent  {
       });
   }
   consultarOferta(id:any){
-    this.socketService.takeOffer(id)
+    let estado = this.socketService.getEstado()
+    if(estado != "Asignado"){
+      this.socketService.takeOffer(id)
+    }
+    else{
+      alert("ya cuenta con oferta asignada")
+    }
+    
   }
 }

@@ -18,9 +18,9 @@ export class MyOffersComponent implements OnInit{
   constructor(private socketService: SocketService) {
     this.offersSub = this.socketService.getMyOffersUpdateListener()
       .subscribe((offers: any[]) => {
-        this.ofertas = [Object.values(offers)[0][1].data]
+        this.ofertas = offers
         this.estado = this.ofertas[0][3]
-        console.log("estado:", this.estado)
+        console.log("ofertas por mostrar:", this.ofertas)
         
       });
   }

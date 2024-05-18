@@ -8,18 +8,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-offers.component.css']
 })
 export class NewOffersComponent {
-  id : any = ''
-  nombre : any = ''
-  direccion : any = ''
+  id: any = ''
+  nombre: any = ''
+  direccion: any = ''
+  material: any = ''
+  cantidad: any = ''
 
-  constructor(private socket : SocketService, private router: Router) {
-    
+  constructor(private socket: SocketService, private router: Router) {
+
   }
-  insertPetition(){
-    this.socket.newRequest(this.nombre, this.direccion, "En curso")
-    alert("oferta enviada")
-    this.router.navigate(['/inicio']);
+  // insertPetition(){
+  //   this.socket.newRequest(this.nombre, this.direccion, "En curso", this.material, this.cantidad)
+  //   alert("oferta enviada")
+  //   this.router.navigate(['/inicio']);
 
+  // }
+  insertPetition() {
+    this.socket.getStatus().subscribe(offers => {
+      console.log("Datos recibidos:", offers);
+      let flag = true
+      for (const offer of offers) {
+        if (offer.data[5] === this.material && offer.data[4] !== "Finalizado") {
+          alert("Usuario ya cuenta con oferta creada");
+          flag = false
+          break;
+        }
+      }
+      if(flag){
+        this.socket.newRequest(this.nombre, this.direccion, "En curso", this.material, this.cantidad);
+        alert("Oferta enviada");
+        this.router.navigate(['/inicio']);
+      }
+
+    });
   }
 
 }

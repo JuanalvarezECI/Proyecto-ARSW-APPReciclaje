@@ -6,14 +6,17 @@
 <div *ngIf="ofertas.length > 0" class="d-flex justify-content-center flex-wrap">
   <div *ngFor="let oferta of ofertas; let i = index" class="card m-2" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{ oferta[1] }}</h5>
+      <h5 *ngIf="rol == 'usuario'" class="card-title">{{ oferta[1].data[1] }}</h5>
+      <h5 *ngIf="rol == 'reciclador'" class="card-title">{{ oferta[1].data[8] }}</h5>
       <p class="card-text">
-        <strong>ID:</strong> {{ oferta[0] }}<br>
-        <strong>Dirección:</strong> {{ oferta[2] }}<br>
-        <strong>Estado:</strong> {{ oferta[3] }}
+        <strong>ID:</strong> {{ oferta[1].data[0] }}<br>
+        <strong>Dirección:</strong> {{ oferta[1].data[3] }}<br>
+        <strong>Estado:</strong> {{ oferta[1].data[4] }}<br>
+        <strong>Material:</strong> {{ oferta[1].data[5] }}<br>
+        <strong>Cantidad:</strong> {{ oferta[1].data[6]}} kg
       </p>
-      <div *ngIf="rol === 'reciclador' && oferta[3] != 'Recogido'">
-        <button class="btn btn-primary float-right" (click)="endOffer(oferta[0])">Finalizar</button>
+      <div *ngIf="rol === 'reciclador' && oferta[1].data[4] != 'Recogido'">
+        <button class="btn btn-primary float-right" (click)="endOffer(oferta[1].data[0])">Finalizar</button>
       </div>
     </div>
   </div>

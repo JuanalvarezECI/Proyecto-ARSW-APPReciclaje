@@ -13,6 +13,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MsalModule, MsalService, MsalGuard, MsalInterceptor, MsalBroadcastService, MsalRedirectComponent } from "@azure/msal-angular";
 import { PublicClientApplication, InteractionType, BrowserCacheLocation } from "@azure/msal-browser";
 import { HttpClientModule } from '@angular/common/http';
+import { InformacionComponent } from './informacion/informacion.component';
+import { PremiosComponent } from './premios/premios.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'new-offers', component: NewOffersComponent },
@@ -27,7 +30,9 @@ const routes: Routes = [
     SeeOffersComponent,
     LoginComponent,
     MyOffersComponent,
-    InicioComponent
+    InicioComponent,
+    InformacionComponent,
+    PremiosComponent
   ],
   imports: [
     MsalModule.forRoot(new PublicClientApplication(
@@ -61,7 +66,8 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
   providers: [
     {

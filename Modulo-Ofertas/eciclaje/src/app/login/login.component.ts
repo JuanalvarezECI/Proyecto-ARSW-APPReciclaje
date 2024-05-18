@@ -46,8 +46,10 @@ export class LoginComponent implements OnInit {
     this.authService.loginPopup(request)
       .subscribe({
         next: (result) => {
+          
           this.authService.instance.setActiveAccount(result.account);
           this.getUserDetails();
+          
           
         },
         error: (error) => {
@@ -61,13 +63,16 @@ export class LoginComponent implements OnInit {
     this.authService.acquireTokenSilent(request).subscribe({
       next: (response) => {
         const accessToken = response.accessToken;
-        console.log("token", accessToken);
+        // console.log("token", accessToken);
         this.getmoredetails(accessToken).subscribe({
           next: (userDetails) => {
             console.log("datos: ", userDetails)
             this.socketService.setRol(userDetails.jobTitle)
             this.socketService.setname(userDetails.displayName)
+            this.socketService.setpoints()
+            
             this.router.navigate(['/inicio']);
+            
           },
           error: (err) => {
             console.error('Error fetching user details from Microsoft Graph:', err);
