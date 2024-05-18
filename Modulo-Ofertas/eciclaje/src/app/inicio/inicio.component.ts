@@ -1,5 +1,5 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 import { SocketService } from '../conexion';
 import { Subscription } from 'rxjs';
 @Component({

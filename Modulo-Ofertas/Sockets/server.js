@@ -68,10 +68,8 @@ let id = 0
 io.on("connection", (socket) => {
 
 
-    // console.log("New client connected", socket.id);
 
     socket.on("disconnect", () => {
-        // console.log("Client disconnected", socket.id);
     });
     socket.on("setName", nombreenviado => {
         nombre = nombreenviado
@@ -90,10 +88,7 @@ io.on("connection", (socket) => {
         offer[1].data.unshift(id);
         offer[1].data.push(0)
         
-        // console.log("New offer received:", offer);
-        // console.log("identificador", offer[0]+offer[1].data[0])
         ofertas[offer[0]+offer[1].data[0]] = offer[1];
-        // console.log("oferta: ",offer[1] )
         ofertasSinTomar[offer[0]+offer[1].data[0]] = offer[1];
         io.emit("update-offers", Object.values(ofertasSinTomar));
         io.emit("myupdate-offers", ofertasenCurso);
@@ -183,29 +178,25 @@ io.on("connection", (socket) => {
     
                 ofertaTomada.data[4] = "Asignado";
                 ofertaTomadaUsuario.data[4] = "Asignado a recolector";
-                // console.log("ofertas en curso antes", ofertasenCurso)
                 ofertasenCurso[offerId[0]+offerId[1]] = ofertaTomada;
                 ofertasenCurso[offerId[0]+offerId[1]].data.push(ofertasenCurso[offerId[0]+offerId[1]].data[1])
 
                 ofertasenCurso[offerId[0]+offerId[1]].data[1] = offerId[0]
                 ofertas[filteredOffersUser[0][0]] = ofertaTomadaUsuario;
-                // console.log("ofertas en curso", ofertasenCurso[offerId[0]+offerId[1]].data[1])
                 delete ofertasSinTomar[filteredOffers[0][0]];
     
-                // Emitir actualizaciones
                 io.emit("update-offers", Object.values(ofertasSinTomar));
                 io.emit("myupdate-offers", ofertasenCurso);
                 io.emit("myupdate-offers_usser", ofertas);
                 io.emit("puntos", usuarios)
             }
-        } else {
-            // console.log("No se encontró la oferta en uno de los diccionarios.");
+        } 
+        else {
         }
     });
 
     socket.on('takePrice', data =>{
         const premiosobject = Object.entries(premios).filter(([key, value]) => value.nombre === data[0]);
-        // console.log("premiosddd:",premiosobject[0][1])
         usuarios[data[1]].puntos -= premiosobject[0][1].puntaje
         io.emit("puntos", usuarios)
         const premiosupdateobject = Object.entries(premios).filter(([key, value]) => value.puntaje <= usuarios[data[1]].puntos);
@@ -215,7 +206,6 @@ io.on("connection", (socket) => {
         }
         mispremios[data[1]].datos.push(premiosobject)
         io.emit("mispremios", mispremios)
-        // console.log("mis premiso:", mispremios[data[1]].datos[0][0])
 
     })
 
@@ -234,14 +224,7 @@ io.on("connection", (socket) => {
         io.emit("myupdate-offers_usser", ofertas);
         io.emit("puntos", usuarios)
 
-        // console.log('update offers correct: ',"myupdate-offers", ofertasenCurso)
     })
-
-    // socket.on('offer-taken', (offerId) => {
-    //     // Logic to handle the offer being taken
-    //     console.log(`Offer with ID ${offerId} has been taken.`);
-    //     // Perform the necessary actions, such as marking the offer as taken
-    //   });
 
 
 });

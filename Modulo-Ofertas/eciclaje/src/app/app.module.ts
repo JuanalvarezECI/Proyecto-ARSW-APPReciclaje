@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { MyOffersComponent } from './my-offers/my-offers.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MsalModule, MsalService, MsalGuard, MsalInterceptor, MsalBroadcastService, MsalRedirectComponent } from "@azure/msal-angular";
+import { MsalModule, MsalService, MsalGuard, MsalInterceptor, MsalBroadcastService} from "@azure/msal-angular";
 import { PublicClientApplication, InteractionType, BrowserCacheLocation } from "@azure/msal-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { InformacionComponent } from './informacion/informacion.component';

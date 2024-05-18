@@ -29,10 +29,7 @@ export class MyOffersComponent implements OnInit{
       this.rol = this.socketService.getRol()
       
   }
-  // consultarOferta(id:any){
-  //   this.socketService.takeOffer(id)
-  // }
-
+  
   endOffer(id:any){
     this.socketService.setStatusEnd(id)
   }

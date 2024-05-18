@@ -11,14 +11,6 @@ export class SeeOffersComponent  {
   ofertas: any[] = [];
   private offersSub: Subscription;
 
-  // ngOnInit(): void {
-  //   this.socketService.getOffersUpdateListener()
-  //   .subscribe((offers: any[]) => {
-  //     this.ofertas = offers;
-      
-  //   });
-  // }
-
   constructor(private socketService: SocketService) {
     this.offersSub = this.socketService.getOffersUpdateListener()
       .subscribe((offers: any[]) => {

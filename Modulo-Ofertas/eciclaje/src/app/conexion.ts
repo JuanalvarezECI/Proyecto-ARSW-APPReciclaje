@@ -1,6 +1,6 @@
  import { Injectable } from '@angular/core';
 import { io, Socket } from 'socket.io-client';
-import { BehaviorSubject, Observable, Subject, Subscriber } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 interface Oferta {
   data: any[];
